@@ -1,0 +1,15 @@
+================================================================================
+hi this is a mini project from ur2dscchools.in
+project title : mysql update to linux notification
+================================================================================
+note :1. this file works only when it is placed in desktop 
+       and  also please change the path of each and every file according to your file path
+      2. please make all the changes carefully 
+      3. both the mysql and notify send should be installled before you run the shell script filie
+      4. shellscript file : execution.sh
+      5. open this shell file in terminal and execute with the below command
+      6.  command sh execution.sh
+      7. works in all the linux distributioions and inn all mysql versionons
+       8. for more details , look into youutube video 
+           https://www.youtube.com/watch?v=tnXQW27XkgY&feature=youtu.be
+thank you 

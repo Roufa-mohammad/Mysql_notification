@@ -1,0 +1,331 @@
+***********************$$$$$$by jahnavi reasearch$$$$$$*****************************
+
+
+
+##################################### table ################################
+CREATE TABLE dob (name varchar(30) , date varchar(30));
+
+LOAD DATA LOCAL INFILE "/home/personal/1" INTO TABLE dob FIELDS TERMINATED BY ' ';
+=============================================================================================
+
+############PROCEDURE##########################################
+
+DELIMITER //
+CREATE PROCEDURE day()
+BEGIN 
+insert into dob2 select name,
+if (day(date)=day(now())
+and month(date)=month(now()),'IS CELEBRATING BIRTHDAY TODAY',
+if (day(date)=day(adddate(now(),-1))
+and month(date)=month(adddate(now(),-1)),'yesterday',
+if (day(date) =day(adddate(now(),+1))
+and month(date)=month(adddate(now(),+1)),'tomorrow','future')))
+from dob;
+END //
+DELIMITER;
+
+===================================================================================================================
+###########################################################################################
+CREATE TRIGGER dob2
+  ON  bob1 FOR INSERT 
+AS 
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM CurrencyTable WHERE Currency IN(SELECT inserted.Currency FROM inserted)
+	INSERT INTO CurrencyTable SELECT * FROM inserted
+END
+GO
+###########################################################################################
+
+===================================================================================================================
+###########################interface#############################
+##########mysqldump -u root -p products > products.spl
+##mysqldump -u root -p products > products.txt
+##mysqldump -u root -p products -e "select * from products where productID = 2001 | tr '\t' ',' > t.txt
+###mysql -u root -p --local-infile products  | tr '\t' ',' > t.txt
+##mysql -u root -p products  < t.sql | awk '{print $1","$2}' >out.csv
+##mysqldump -h localhost -u root -p  name | gzip > name.sql.gz
+###mysql -u root -p name -e update dob1 
+###mysql -u root -p name -e "select * from dob1" -b > dob1.txt
+###mysql -u root -p name -e "a()"
+###mysql -u root -p --execute="a()" name
+###mysql -u root -p name < script.sql 
+###mysql -u root –p -e 'call a();' name
+###mysql -h localhost -u root -p name < /home/janu/y.txt
+###mysql -u root -p a -e "call a()" -b > dobt.txt
+=========================###INTERFACE COMMANDS###=============================
+
+
+mysql -u root -p -D spt -e "call day()"
+
+mysql -u root -p -D spt -e "drop table dob1"
+mysql -u root -p -D spt -e "CREATE TABLE dob1 (name varchar(30) , day varchar(30));"
+
+mysql -u root -p spt -e "select * from dob1" -b > t.txt
+
+=====================================================================
+
+##################### DIALOG BOX#######################
+ dialog --title "WISH HAPPY BIRTHDAY" --textbox t.txt 10 80
+
+
+===============================================================
+######## consider only today row ######################
+
+awk '$0 ~ /today/{print}' j.txt
+
+awk -F, '$1 == "Medicine"{print $2}' file
+
+===============================================================
+
+
+========================project=============================================
+**********by jahnavi**********************
+***********by me******************************
+
+#!/bin/sh
+#cd
+
+
+
+
+MYSQL_USER="root"
+***************please give your mysql password please****************************
+MYSQL_PASSWORD="33652210035869"
+
+
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD  -e  "DROP database IF EXISTS spp ;create database spp;use spp;"
+
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD  -e  "create database spp";
+
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD  -e  "use spp";
+
+
+DBNAME="spp"
+
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e  "DROP TABLE IF EXISTS dob;CREATE TABLE dob(name varchar(30),date varchar(30));LOAD DATA LOCAL INFILE '/home/personal/Desktop/mysqlupdatenotification/inputdata' INTO TABLE dob FIELDS TERMINATED BY ' ';DROP TABLE IF EXISTS dob1;CREATE TABLE dob1(name varchar(30),date varchar(30));"
+
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e "CREATE TABLE dob(name varchar(30),date varchar(30))";
+
+
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e "LOAD DATA LOCAL INFILE '/home/personal/Desktop/mysqlupdatenotification/inputdata' INTO TABLE dob FIELDS TERMINATED BY ' ';"
+
+
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e  "DROP TABLE IF EXISTS dob1;CREATE TABLE dob1(name varchar(30),date varchar(30));"
+
+
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e "CREATE TABLE dob1(name varchar(30),date varchar(30))";
+
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME < /home/personal/Desktop/mysqlupdatenotification/myproce.sql
+
+#mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e "`
+#CREATE PROCEDURE day()
+#BEGIN 
+#insert into dob1 select name,
+#if (day(date)=day(now())
+#and month(date)=month(now()),'IS CELEBRATING BIRTHDAY TODAY',
+#if (day(date)=day(adddate(now(),-1))
+#and month(date)=month(adddate(now(),-1)),'yesterday',
+#if (day(date) =day(adddate(now(),+1))
+#and month(date)=month(adddate(now(),+1)),'tomorrow','future')))
+#from dob;
+#END `";
+
+
+
+
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e"drop table dob1 ;CREATE TABLE dob1 (name varchar(30) , day varchar(30));call day();select * from dob1"  > /home/personal/Desktop/mysqlupdatenotification/t.txt
+
+#mysql -u root -p -D spt -e "drop table dob1 ;CREATE TABLE dob1 (name varchar(30) , day varchar(30));call day();select * from dob1" -b > t.txt
+
+
+
+
+#mysql -u root -p -D spt -e "CREATE TABLE dob1 (name varchar(30) , day varchar(30));"
+
+#mysql -u root -p -D spt -e "call day()"  #to call a procedure from command line
+
+#mysql -u root -p spt -e "select * from dob1" -b > t.txt
+
+awk '!seen[$0]++' /home/personal/Desktop/mysqlupdatenotification/t.txt > /home/personal/Desktop/mysqlupdatenotification/j.txt
+#this gives the unique results by avioding duplicate data 
+
+awk '$0 ~ /IS CELEBRATING BIRTHDAY TODAY/{print}' /home/personal/Desktop/mysqlupdatenotification/j.txt > /home/personal/Desktop/mysqlupdatenotification/k.txt
+
+notify-send  -i /home/personal/Desktop/mysqlupdatenotification/cake.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/mysqlupdatenotification/k.txt`" -t 5000
+
+ dialog --title "WISH HAPPY BIRTHDAY To YOUR BEST" --textbox /home/personal/Desktop/mysqlupdatenotification/k.txt 10 80
+
+
+====================================================notificationo workspace===============================================
+
+==================================1st attempt==============================================
+
+personal@purnasai:~$ notify-send "Message Title" "The message body is shown here" -i /usr/share/pixmaps/idle.xpm -t 5000
+personal@purnasai:~$ notify-send "Message Title" "The message body is shown here" -i /usr/share/pixmaps/idle.xpm -t 5000
+personal@purnasai:~$ notify-send test "`tail /var/log/syslog`"
+personal@purnasai:~$ notify-send test "`/home/personal/Desktop/k.txt`"
+bash: /home/personal/Desktop/k.txt: Permission denied
+personal@purnasai:~$ sudo notify-send test "`/home/personal/Desktop/k.txt`"
+bash: /home/personal/Desktop/k.txt: Permission denied
+[sudo] password for personal: 
+personal@purnasai:~$ sudo notify-send test "`tail /home/personal/Desktop/k.txt`" 
+personal@purnasai:~$ notify-send test "`tail /home/personal/Desktop/k.txt`"personal@purnasai:~$ sudo notify-send test "`tail /home/personal/Desktop/k.txt`"personal@purnasai:~$ sudo notify-send test "`tail /home/personal/Desktop/k.txt`"personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "                 BIRTHDAY"  "`tail /home/personal/Desktop/k.txt`"
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`"
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`" -t 3000
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`" -t 5000
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`" -t 1000
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`" -t 2000
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`" -t 3000
+
+
+
+
+====================================2nd attemp=================================================
+
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(k ~/ved)" "$(cat ~/ved)" 
+k: command not found
+cat: /home/personal/ved: No such file or directory
+No summary specified.
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(basename ~/ved)" "$(cat ~/ved)"
+cat: /home/personal/ved: No such file or directory
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(basename ~/k.txt)" "$(cat ~/ved)"
+cat: /home/personal/ved: No such file or directory
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(basename ~/k.txt)" "$(cat ~/k.txt)"
+personal@purnasai:~$ 
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(basename ~/k.txt)" "$(cat ~/k.txt)"
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(basename ~/k.txt)" "$(cat ~/IS CELEBRATING BIRTHDAY TODAY)"
+cat: /home/personal/IS: No such file or directory
+cat: CELEBRATING: No such file or directory
+cat: BIRTHDAY: No such file or directory
+cat: TODAY: No such file or directory
+personal@purnasai:~$ notify-send -u critical -t 3000 "$(basename ~/k.txt)" "$(cat ~/'IS CELEBRATING BIRTHDAY TODAY')"
+cat: '/home/personal/IS CELEBRATING BIRTHDAY TODAY': No such file or directory
+personal@purnasai:~$ echo 'information overlord' | while read OUTPUT; do notify-send "$OUTPUT"; done
+personal@purnasai:~$ notify-send -i /home/sathiya/deal.ico 'Deal success'
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico  'Deal success'
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico  -i /home/personal/Desktop/k.txt 
+No summary specified.
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico /home/personal/Desktop/k.txt 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico  k  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico  BIRTHDAY  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico        BIRTHDAY  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "   BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "   BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "          BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "                               BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "                       BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "                 BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+personal@purnasai:~$ notify-send -i /home/personal/Desktop/pirog63.ico "                 BIRTHDAY"  "/home/personal/Desktop/k.txt" 
+
+
+
+
+==============================================worked========================================
+line no 18 in first attempt::::
+personal@purnasai:~$ sudo notify-send  -i /home/personal/Desktop/pirog63.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/k.txt`" -t 3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===============================final document======================================================
+#===============================================================================
+#********************************project****************************************
+#*****************mysql update to linux notification****************************
+#===============================================================================
+#!/bin/sh
+#cd
+
+######giving root to mysqlvariable##############################################
+MYSQL_USER="root" 
+
+######giving password to mysqlvariable##########################################
+MYSQL_PASSWORD="33652210035869" 
+
+######database creation and using###############################################
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD  -e  "DROP database IF EXISTS spp ;create database spp;use spp;"
+
+######giving database to mysqlvariable##########################################
+DBNAME="spp"
+
+######table creation,inserting values to mysql table############################
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e  "DROP TABLE IF EXISTS dob;CREATE TABLE dob(name varchar(30),date varchar(30));LOAD DATA LOCAL INFILE '/home/personal/Desktop/mysqlupdatenotification/inputdata' INTO TABLE dob FIELDS TERMINATED BY ' ';DROP TABLE IF EXISTS dob1;CREATE TABLE dob1(name varchar(30),date varchar(30));"
+
+######creating procedure in file and dumping into mysql#########################
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME < /home/personal/Desktop/mysqlupdatenotification/myproce.sql
+
+######calling procedure and sending procedure output to text file###############
+mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -D$DBNAME -e"drop table dob1 ;CREATE TABLE dob1 (name varchar(30) , day varchar(30));call day();select * from dob1"  > /home/personal/Desktop/mysqlupdatenotification/t.txt
+
+
+###### awk command to give unique data by avoiding duplicate data###############
+awk '!seen[$0]++' /home/personal/Desktop/mysqlupdatenotification/t.txt > /home/personal/Desktop/mysqlupdatenotification/j.txt
+
+###### awk command to print the data between // ################################
+awk '$0 ~ /IS CELEBRATING BIRTHDAY TODAY/{print}' /home/personal/Desktop/mysqlupdatenotification/j.txt > /home/personal/Desktop/mysqlupdatenotification/k.txt
+
+
+######creating notification with final output###################################
+
+notify-send  -i /home/personal/Desktop/mysqlupdatenotification/cake.ico "   hey HI, BIRTHDAY NOTIFICATION"  "`tail /home/personal/Desktop/mysqlupdatenotification/k.txt`" -t 5000
+
+######creating dailouge with final output#######################################
+ dialog --title "WISH HAPPY BIRTHDAY To YOUR BEST" --textbox /home/personal/Desktop/mysqlupdatenotification/k.txt 10 80
+
+#========**jahnavi,Purnasai,Vijayalakshmi,Uttejsai,Venkat,Reshma,Gopikumar**===#
+
+
+#========**jahnavi,Purnasai,Vijayalakshmi,Uttejsai,Venkat,Reshma,Gopikumar**========================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
